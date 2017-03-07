@@ -1,0 +1,28 @@
+QUESTION:-
+1. Write a Java program to copy a file from HDFS to LFS
+2. Explain the importance and usage of the below terms in details
+            ● DFSInputStream 
+            ● DFSOutputStream
+            ● FSDataInputStream
+            ● FSDataOutputStream
+            
+ ANSWER:-
+ 1)-
+    IMAGE HAS BEEN ATTACHED.
+    
+ 2)- DFSInputStream :  Called internally by FSDataInputStream.Handles communication of the namenodewith various datanodes. 
+ Handles integrity of data contained by the blocks.Manages data read activity in case of datanodefailure.
+
+FSDataInputStream :Provides stream (channel) for reading data.
+                   FSDataInputStream
+                   Lets the application read from a file
+                   FSDataInputStream in = fs.open(new Path(uri));
+
+FSDataOutputStream :Provides stream (channel) for writing data.
+                    OutputStreamout = fs.create(new Path(dst));
+                    IOUtils.copyBytes(in, out, 4096, true);
+
+
+DFSOutputStream :Handles communication of the namenodewith various datanodes.
+                 Called internally by FSDataOutputStream
+
